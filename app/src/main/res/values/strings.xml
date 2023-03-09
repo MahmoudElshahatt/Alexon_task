@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Alexon-Task</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="onboarding1_title">Browse your  menu and order directly</string>
+    <string name="onboarding2_title">Even to space with us! Together </string>
+    <string name="onboarding3_title">Pickup delivery at your door</string>
+
+    <string name="onboarding_desc">Our app can send you everywhere, even space. For only $2.99 per month</string>
+</resources>
