@@ -5,10 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.viewpager2.widget.ViewPager2
-import com.shahtott.alexon_task.R
-import com.shahtott.alexon_task.databinding.FragmentFirstScreenBinding
 import com.shahtott.alexon_task.databinding.FragmentThirdScreenBinding
+import com.shahtott.alexon_task.onboarding.util.toAuthActivity
 
 
 class OnBoardingThirdScreen : Fragment() {
@@ -25,7 +23,7 @@ class OnBoardingThirdScreen : Fragment() {
 
     private fun setOnFinishListener() {
         binding.btnFinishOnboarding.setOnClickListener {
-            //requireContext().toAuthActivity()
+            requireContext().toAuthActivity()
         }
     }
 
