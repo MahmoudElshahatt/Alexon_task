@@ -26,8 +26,8 @@ class OnBoardingActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityOnboardingBinding.inflate(layoutInflater)
         installSplashScreen()
+        binding = ActivityOnboardingBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         initializeOnBoardingViewPager()
