@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.AlexonTask" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/main_color</item>
+        <item name="colorPrimaryVariant">@color/main_color</item>
+        <item name="colorOnPrimary">@color/accent_color</item>
+        <item name="colorAccent">@color/accent_color</item>
+
+        <item name="android:navigationBarColor">@color/main_color</item>
+        <item name="android:windowBackground">@color/main_color</item>
+        <item name="android:textViewStyle">@style/TextViewStyle</item>
+        <item name="android:fontFamily">@font/font_family</item>
+
+        <item name="android:windowLightStatusBar">true</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="roundInputTextField" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+        <item name="boxBackgroundColor">@color/gray_300</item>
+        <item name="boxCornerRadiusBottomEnd">4dp</item>
+        <item name="boxCornerRadiusBottomStart">4dp</item>
+        <item name="boxCornerRadiusTopEnd">4dp</item>
+        <item name="boxCornerRadiusTopStart">4dp</item>
+        <item name="boxStrokeWidth">3dp</item>
+        <item name="boxStrokeColor">@color/gray_500</item>
+        <item name="boxStrokeWidthFocused">3dp</item>
+    </style>
+</resources>

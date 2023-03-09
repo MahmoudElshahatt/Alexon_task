@@ -3,7 +3,8 @@
     android:color="@color/fab_ripple">
     <item>
         <shape xmlns:android="http://schemas.android.com/apk/res/android"
-            android:shape="oval">
+            android:shape="rectangle">
+            <corners android:radius="30dp"/>
             <solid android:color="@color/accent_color" />
         </shape>
     </item>

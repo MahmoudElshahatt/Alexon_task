@@ -6,13 +6,21 @@
         <item name="colorPrimaryVariant">@color/main_color</item>
         <item name="colorOnPrimary">@color/accent_color</item>
         <item name="colorAccent">@color/accent_color</item>
-        <item name="android:navigationBarColor">@color/main_color</item>
 
+        <item name="android:navigationBarColor">@color/main_color</item>
+        <item name="android:windowBackground">@color/main_color</item>
         <item name="android:textViewStyle">@style/TextViewStyle</item>
         <item name="android:fontFamily">@font/font_family</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+
+        <!--Changing the statusBar color to black to support API 22 and below-->
+        <item name="android:statusBarColor">@color/black</item>
         <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Theme.App.Login" parent="Theme.AlexonTask">
+        <item name="android:statusBarColor">@color/accent_color</item>
+        <item name="android:navigationBarColor">@color/main_color</item>
+
     </style>
 
     <style name="Theme.App.Starting" parent="Theme.SplashScreen">
@@ -24,6 +32,15 @@
 
     <style name="TextViewStyle" parent="android:Widget.TextView">
         <item name="android:fontFamily">@font/font_family</item>
+    </style>
+
+    <style name="CustomButton" parent="Widget.AppCompat.ActionButton">
+        <item name="android:background">@drawable/login_background</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:padding">20dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">17sp</item>
     </style>
 
 </resources>

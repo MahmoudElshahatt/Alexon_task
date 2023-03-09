@@ -17,7 +17,7 @@
             android:name=".auth.AuthActivity"
             android:exported="false"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AlexonTask"
+            android:theme="@style/Theme.App.Login"
             android:windowSoftInputMode="stateAlwaysHidden" />
 
         <activity
