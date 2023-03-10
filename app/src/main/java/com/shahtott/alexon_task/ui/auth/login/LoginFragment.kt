@@ -7,9 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import com.shahtott.alexon_task.R
 import com.shahtott.alexon_task.databinding.FragmentLoginBinding
+import com.shahtott.alexon_task.util.snakebar.showSnakeBar
 import com.shahtott.alexon_task.util.toMainActivity
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -37,7 +39,7 @@ class LoginFragment : Fragment() {
     private fun observations() {
         //Login States
         viewModel.isLoading.observe(viewLifecycleOwner) { isLoading ->
-
+            binding.pgLogin.isVisible = isLoading
         }
 
         viewModel.isSuccess.observe(viewLifecycleOwner) { isSuccess ->
@@ -47,13 +49,18 @@ class LoginFragment : Fragment() {
         }
 
         viewModel.generalError.observe(viewLifecycleOwner) { errorMessage ->
-
+            if (errorMessage.isNotEmpty()) {
+                this.view?.let {
+                    showSnakeBar(it, errorMessage)
+                }
+            }
         }
 
         viewModel.networkError.observe(viewLifecycleOwner) { isNoInternet ->
             if (isNoInternet) {
-                Toast.makeText(requireContext(), "No Internet Connection", Toast.LENGTH_SHORT)
-                    .show()
+                this.view?.let {
+                    showSnakeBar(it, getString(R.string.no_internet))
+                }
             }
         }
     }
@@ -73,4 +80,8 @@ class LoginFragment : Fragment() {
 
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        viewModel.resetErrorStates()
+    }
 }

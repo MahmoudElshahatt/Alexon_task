@@ -4,6 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.shahtott.alexon_task.util.network.ErrorResponse
+import com.shahtott.alexon_task.util.network.ResultWrapper
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
@@ -28,20 +30,40 @@ class LoginViewModel @Inject constructor(private val loginRepository: LoginRepos
 
     private var _job: Job? = null
 
-    fun loginClicked(phone: String, password: String) {
+    fun loginClicked(email: String, password: String) {
         _isLoading.value = true
+        // after that login user
         _job = viewModelScope.launch {
-            //No Backend server for now.
-            loginRepository.login(phone, password)
-            _isSuccess.value = true
-        }
-        _isLoading.postValue(false)
-    }
+            val loginRes = loginRepository.login(email, password)
+            when (loginRes) {
+                is ResultWrapper.NetworkError -> showNetworkError()
+                is ResultWrapper.GenericError -> showGeneralError(loginRes.error)
+                is ResultWrapper.Success<*> -> showSuccess()
+            }
+            _isLoading.postValue(false)
 
+        }
+    }
     fun cancelCurrentJob() {
         if (_job?.isActive == true) {
             _job?.cancel()
         }
     }
 
+    private fun showNetworkError() {
+        _networkError.value = true
+    }
+
+    private fun showGeneralError(error: ErrorResponse?) {
+        _generalError.value = error?.message ?: ""
+    }
+
+    private fun showSuccess() {
+        _isSuccess.value = true
+    }
+
+    fun resetErrorStates() {
+        _generalError.value = ""
+        _networkError.value = false
+    }
 }
