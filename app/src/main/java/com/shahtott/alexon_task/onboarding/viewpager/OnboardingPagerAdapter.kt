@@ -1,4 +1,4 @@
-package com.shahtott.alexon_task.onboarding
+package com.shahtott.alexon_task.onboarding.viewpager
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity

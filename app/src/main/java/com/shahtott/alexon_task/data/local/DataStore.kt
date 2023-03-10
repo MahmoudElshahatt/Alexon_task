@@ -12,8 +12,6 @@ interface DataStore {
 
     suspend fun getUserName(): String
 
-    suspend fun getUserTitle(): String
-
     suspend fun getUserImageUrl(): String
 
     suspend fun isLoggedIn(): Boolean

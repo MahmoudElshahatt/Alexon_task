@@ -28,7 +28,6 @@ class DataStoreImpl(
         const val USER_PHONE = "userPhone"
         const val USER_EMAIL = "userEmail"
         const val USER_IMAGE_URL = "userImage"
-        const val USER_TITLE = "userTitle"
         const val IS_PASSED_ON_BOARDING = "passedIntro"
         const val IS_LOGGED_IN = "loggedIn"
     }
@@ -65,7 +64,6 @@ class DataStoreImpl(
         val email = user.email ?: "No email"
         val phone = user.phone ?: "No phone"
         val token = user.token ?: "No token"
-        val title = user.title ?: "No title"
         val imageUrl = user.imageUrl ?: "No image"
 
         mDataStore.edit { settings ->
@@ -73,7 +71,6 @@ class DataStoreImpl(
             settings[stringPreferencesKey(USER_EMAIL)] = email
             settings[stringPreferencesKey(USER_PHONE)] = phone
             settings[stringPreferencesKey(USER_TOKEN_ACCESS)] = token
-            settings[stringPreferencesKey(USER_TITLE)] = title
             settings[stringPreferencesKey(USER_IMAGE_URL)] = imageUrl
         }
     }
@@ -83,7 +80,6 @@ class DataStoreImpl(
         var email: String? = null
         var phone: String? = null
         var token: String? = null
-        var title: String? = null
         var imageUrl: String? = null
 
         mDataStore.data.map { settings ->
@@ -91,7 +87,6 @@ class DataStoreImpl(
             email = settings[stringPreferencesKey(USER_EMAIL)]
             phone = settings[stringPreferencesKey(USER_PHONE)]
             token = settings[stringPreferencesKey(USER_TOKEN_ACCESS)]
-            title = settings[stringPreferencesKey(USER_TITLE)]
             imageUrl = settings[stringPreferencesKey(USER_IMAGE_URL)]
 
         }.first().toString()
@@ -101,7 +96,6 @@ class DataStoreImpl(
             email = email,
             phone = phone,
             token = token,
-            title = title,
             imageUrl = imageUrl
         )
     }
@@ -133,11 +127,6 @@ class DataStoreImpl(
         }.first() ?: false
     }
 
-    override suspend fun getUserTitle(): String = withContext(dispatcher) {
-        mDataStore.data.map { settings ->
-            settings[stringPreferencesKey(USER_TITLE)]
-        }.first().toString()
-    }
 
     override suspend fun getUserImageUrl(): String = withContext(dispatcher) {
         mDataStore.data.map { settings ->
