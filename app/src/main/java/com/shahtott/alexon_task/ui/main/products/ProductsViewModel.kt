@@ -5,10 +5,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.shahtott.alexon_task.ui.main.products.models.ProductsResponse
+import com.shahtott.alexon_task.ui.main.products.models.ProductsResponse.Product
 import com.shahtott.alexon_task.util.network.ErrorResponse
 import com.shahtott.alexon_task.util.network.ResultWrapper
 import dagger.hilt.android.lifecycle.HiltViewModel
-import dagger.hilt.internal.aggregatedroot.codegen._com_shahtott_alexon_task_App
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -21,8 +21,8 @@ class ProductsViewModel @Inject constructor(val productsRepository: ProductsRepo
      * UI states
      */
 
-    private val _isSuccess = MutableLiveData<Boolean>()
-    val isSuccess: LiveData<Boolean> = _isSuccess
+    private val _products = MutableLiveData<List<Product>?>()
+    val products: LiveData<List<Product>?> = _products
 
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
@@ -35,6 +35,9 @@ class ProductsViewModel @Inject constructor(val productsRepository: ProductsRepo
 
     private var _job: Job? = null
 
+    init {
+        getProducts()
+    }
 
     fun getProducts() {
         _job = viewModelScope.launch {
@@ -58,7 +61,7 @@ class ProductsViewModel @Inject constructor(val productsRepository: ProductsRepo
     }
 
     private fun showSuccess(productsResponse: ProductsResponse) {
-        _isSuccess.value = true
+        _products.value = productsResponse.products
     }
 
     fun cancelCurrentJob() {

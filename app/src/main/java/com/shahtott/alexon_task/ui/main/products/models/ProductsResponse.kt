@@ -9,7 +9,7 @@ data class ProductsResponse(
     @field:Json(name = "limit")
     val limit: Int? = 0, // 30
     @field:Json(name = "products")
-    val products: List<Product?>? = listOf(),
+    val products: List<Product>? = listOf(),
     @field:Json(name = "skip")
     val skip: Int? = 0, // 0
     @field:Json(name = "total")
