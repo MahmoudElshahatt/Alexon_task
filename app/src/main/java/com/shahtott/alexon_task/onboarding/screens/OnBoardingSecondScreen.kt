@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.shahtott.alexon_task.R
-import com.shahtott.alexon_task.databinding.FragmentFirstScreenBinding
 import com.shahtott.alexon_task.databinding.FragmentSecondScreenBinding
 
 class OnBoardingSecondScreen : Fragment() {

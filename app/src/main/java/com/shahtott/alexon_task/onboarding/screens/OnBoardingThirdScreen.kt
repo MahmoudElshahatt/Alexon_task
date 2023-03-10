@@ -9,6 +9,7 @@ import androidx.lifecycle.lifecycleScope
 import com.shahtott.alexon_task.databinding.FragmentThirdScreenBinding
 import com.shahtott.alexon_task.onboarding.OnBoardingActivity
 import com.shahtott.alexon_task.util.toAuthActivity
+import kotlinx.coroutines.launch
 
 
 class OnBoardingThirdScreen : Fragment() {
@@ -25,9 +26,14 @@ class OnBoardingThirdScreen : Fragment() {
 
     private fun setOnFinishListener() {
         binding.btnFinishOnboarding.setOnClickListener {
-            (activity as OnBoardingActivity).viewModel.setUserPassedOnBoarding()
-            requireContext().toAuthActivity()
+
+            lifecycleScope.launch {
+                (activity as OnBoardingActivity).viewModel.setUserPassedOnBoarding()
+                requireContext().toAuthActivity()
+            }
+
         }
+
     }
 
 }
