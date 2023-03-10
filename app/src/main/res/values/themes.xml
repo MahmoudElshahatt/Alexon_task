@@ -35,7 +35,8 @@
     </style>
 
     <style name="AppButton" parent="Widget.AppCompat.ActionButton">
-        <item name="android:background">@drawable/login_background</item>
+        <item name="android:background">@drawable/app_button_background</item>
+        <item name="android:elevation">10dp</item>
         <item name="android:textAllCaps">true</item>
         <item name="android:padding">20dp</item>
         <item name="android:textStyle">bold</item>
