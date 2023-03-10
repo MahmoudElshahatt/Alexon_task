@@ -2,7 +2,7 @@ package com.shahtott.alexon_task.util
 
 import android.content.Context
 import android.content.Intent
-import com.shahtott.alexon_task.MainActivity
+import com.shahtott.alexon_task.main.MainActivity
 import com.shahtott.alexon_task.auth.AuthActivity
 
 fun Context.toAuthActivity() {
