@@ -12,7 +12,7 @@
         android:layout_width="38dp"
         android:layout_height="38dp"
         android:layout_marginStart="26dp"
-        android:layout_marginTop="37dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/back_arrow_background"
         android:clickable="true"
         android:elevation="2dp"
@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/txt_search_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/font_family"
@@ -30,20 +30,71 @@
         android:textColor="@color/title_color"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/btn_back"
-        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintEnd_toStartOf="@+id/card_person"
         app:layout_constraintStart_toEndOf="@+id/btn_back"
         app:layout_constraintTop_toTopOf="@+id/btn_back" />
 
-    <ImageView
-        android:id="@+id/imageView"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_person"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="26dp"
-        android:background="@drawable/icon_person_background"
-        android:clipToOutline="true"
-        android:src="@drawable/ic_person"
-        app:layout_constraintBottom_toBottomOf="@+id/textView2"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_search_title"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView2" />
+        app:layout_constraintTop_toTopOf="@+id/txt_search_title">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clipToOutline="true"
+            android:src="@drawable/ic_person" />
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/img_filter_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/back_arrow_background"
+        android:clickable="true"
+        android:elevation="2dp"
+        android:focusable="true"
+        android:foreground="?selectableItemBackgroundBorderless"
+        android:padding="12dp"
+        android:src="@drawable/ic_filter_search"
+        app:layout_constraintEnd_toEndOf="@+id/card_person"
+        app:layout_constraintStart_toStartOf="@+id/card_person"
+        app:layout_constraintTop_toTopOf="@+id/search_text_input"
+        app:layout_constraintBottom_toBottomOf="@id/search_text_input"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/search_text_input"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="12dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:textColorHint="@color/black"
+        app:boxStrokeColor="@color/accent_color"
+        app:hintTextColor="@color/hint_text_color"
+        app:layout_constraintEnd_toStartOf="@id/img_filter_search"
+        app:layout_constraintStart_toStartOf="@id/btn_back"
+        app:layout_constraintTop_toBottomOf="@id/txt_search_title"
+        app:startIconDrawable="@drawable/ic_search"
+        app:startIconTint="#767F9D">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/font_family"
+            android:hint="Search Product"
+            android:inputType="textEmailAddress"
+            android:textColorHint="@color/hint_text_color"
+            android:textSize="16sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
