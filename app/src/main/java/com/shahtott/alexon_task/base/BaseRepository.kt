@@ -2,13 +2,16 @@ package com.shahtott.alexon_task.base
 
 import com.shahtott.alexon_task.data.local.DataStoreImpl
 import com.shahtott.alexon_task.data.local.User
+import com.shahtott.alexon_task.data.remote.RemoteData
 import javax.inject.Inject
 
 open class BaseRepository() {
 
     @Inject
-    lateinit var dataStore: DataStoreImpl
+    lateinit var remoteData: RemoteData
 
+    @Inject
+    lateinit var dataStore: DataStoreImpl
 
     suspend fun getUserName(): String {
         return dataStore.getUserName()
