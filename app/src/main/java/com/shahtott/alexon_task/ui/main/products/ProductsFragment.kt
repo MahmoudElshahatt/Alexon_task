@@ -33,15 +33,15 @@ class ProductsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        lifecycleScope.launch {
-            val result = viewModel.productsRepository.getProducts()
-            val adapter=ProductsAdapter()
-            binding.rvProducts.apply {
-                this.adapter=adapter
-                layoutManager=StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL)
-            }
-            adapter.submitList(result.products)
-        }
+//        lifecycleScope.launch {
+//            val result = viewModel.productsRepository.getProducts()
+//            val adapter=ProductsAdapter()
+//            binding.rvProducts.apply {
+//                this.adapter=adapter
+//                layoutManager=StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL)
+//            }
+//            adapter.submitList(result.products)
+//        }
         onClickListeners()
         observations()
     }
