@@ -69,4 +69,10 @@ class ProductsViewModel @Inject constructor(val productsRepository: ProductsRepo
             _job?.cancel()
         }
     }
+
+    fun resetErrorStates() {
+        _generalError.value = ""
+        _networkError.value = false
+    }
+
 }

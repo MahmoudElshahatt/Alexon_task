@@ -60,8 +60,16 @@ class ProductsFragment : Fragment() {
 
         viewModel.networkError.observe(viewLifecycleOwner) { isNoInternet ->
             if (isNoInternet) {
-               binding.errorStateGroup.isVisible=isNoInternet
+                binding.errorStateGroup.isVisible = isNoInternet
             }
+        }
+
+    }
+
+    private fun onClickListeners() {
+
+        binding.btnBack.setOnClickListener {
+            requireActivity().finish()
         }
 
     }
@@ -78,12 +86,22 @@ class ProductsFragment : Fragment() {
         return adapter
     }
 
-    private fun onClickListeners() {
 
-        binding.btnBack.setOnClickListener {
-            requireActivity().finish()
+    override fun onDestroy() {
+        super.onDestroy()
+        viewModel.apply {
+            resetErrorStates()
+            cancelCurrentJob()
         }
-
     }
 
+//    private fun showError(errorMessage: String?, errorImg: Int) {
+//        binding.apply {
+//            pgLoading.isVisible = false
+//            viewsGroup.isVisible = false
+//            txtErrorState.text = errorMessage
+//            imgErrorState.setImageResource(errorImg)
+//            errorStateGroup.isVisible = true
+//        }
+//    }
 }

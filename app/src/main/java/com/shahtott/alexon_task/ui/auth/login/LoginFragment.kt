@@ -82,6 +82,9 @@ class LoginFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        viewModel.resetErrorStates()
+        viewModel.apply {
+            resetErrorStates()
+            cancelCurrentJob()
+        }
     }
 }
