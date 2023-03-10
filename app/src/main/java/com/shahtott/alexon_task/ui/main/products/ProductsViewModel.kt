@@ -7,7 +7,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class ProductsViewModel @Inject constructor(private val productsRepository: ProductsRepository) :
+class ProductsViewModel @Inject constructor( val productsRepository: ProductsRepository) :
     ViewModel() {
 
     /**

@@ -6,10 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.shahtott.alexon_task.R
 import com.shahtott.alexon_task.databinding.FragmentLoginBinding
 import com.shahtott.alexon_task.databinding.FragmentProductsBinding
+import com.shahtott.alexon_task.ui.main.products.adapter.ProductsAdapter
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class ProductsFragment : Fragment() {
@@ -25,9 +29,19 @@ class ProductsFragment : Fragment() {
         binding = FragmentProductsBinding.inflate(layoutInflater)
         return binding.root
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        lifecycleScope.launch {
+            val result = viewModel.productsRepository.getProducts()
+            val adapter=ProductsAdapter()
+            binding.rvProducts.apply {
+                this.adapter=adapter
+                layoutManager=StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL)
+            }
+            adapter.submitList(result.products)
+        }
         onClickListeners()
         observations()
     }
@@ -39,7 +53,7 @@ class ProductsFragment : Fragment() {
 
     private fun onClickListeners() {
 
-        binding.btnBack.setOnClickListener{
+        binding.btnBack.setOnClickListener {
             requireActivity().finish()
         }
 

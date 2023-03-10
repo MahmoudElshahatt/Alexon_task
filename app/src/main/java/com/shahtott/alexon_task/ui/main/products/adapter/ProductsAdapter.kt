@@ -22,7 +22,7 @@ class ProductsAdapter() : ListAdapter<Product, ProductsAdapter.ViewHolder>(Produ
 
     class ViewHolder(private val itemBinding: ProductItemBinding) : RecyclerView.ViewHolder(itemBinding.root) {
         fun bind(product: Product) {
-
+                itemBinding.txtItemTitle.text=product.title
         }
     }
     class ProductDiffCallback : DiffUtil.ItemCallback<Product>() {
