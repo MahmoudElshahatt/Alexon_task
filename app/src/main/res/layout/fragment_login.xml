@@ -149,7 +149,7 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_login"
-                style="@style/CustomButton"
+                style="@style/AppButton"
                 android:layout_width="240dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
