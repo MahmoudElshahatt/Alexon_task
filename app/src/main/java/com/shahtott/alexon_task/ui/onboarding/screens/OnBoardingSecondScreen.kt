@@ -1,4 +1,4 @@
-package com.shahtott.alexon_task.onboarding.screens
+package com.shahtott.alexon_task.ui.onboarding.screens
 
 import android.os.Bundle
 import android.view.LayoutInflater

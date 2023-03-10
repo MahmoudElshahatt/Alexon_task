@@ -1,4 +1,4 @@
-package com.shahtott.alexon_task.main.products
+package com.shahtott.alexon_task.ui.main.products
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

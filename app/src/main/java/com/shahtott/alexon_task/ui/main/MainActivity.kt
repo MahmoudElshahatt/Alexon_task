@@ -1,14 +1,12 @@
-package com.shahtott.alexon_task.auth
+package com.shahtott.alexon_task.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.shahtott.alexon_task.R
-import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
-class AuthActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_auth)
+        setContentView(R.layout.activity_main)
     }
 }

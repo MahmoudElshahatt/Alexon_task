@@ -1,4 +1,4 @@
-package com.shahtott.alexon_task.auth.login
+package com.shahtott.alexon_task.ui.auth.login
 
 import com.shahtott.alexon_task.base.BaseRepository
 import com.shahtott.alexon_task.data.local.User

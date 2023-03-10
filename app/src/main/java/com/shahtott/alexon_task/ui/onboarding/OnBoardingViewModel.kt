@@ -1,4 +1,4 @@
-package com.shahtott.alexon_task.onboarding
+package com.shahtott.alexon_task.ui.onboarding
 
 import androidx.lifecycle.ViewModel
 import com.shahtott.alexon_task.data.local.DataStoreImpl

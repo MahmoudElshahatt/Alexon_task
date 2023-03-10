@@ -1,4 +1,4 @@
-package com.shahtott.alexon_task.main.products.models
+package com.shahtott.alexon_task.ui.main.products.models
 
 
 import com.squareup.moshi.Json

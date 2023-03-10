@@ -1,4 +1,4 @@
-package com.shahtott.alexon_task.auth.login
+package com.shahtott.alexon_task.ui.auth.login
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

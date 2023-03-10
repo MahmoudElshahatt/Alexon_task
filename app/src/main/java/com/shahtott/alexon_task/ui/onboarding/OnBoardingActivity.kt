@@ -1,4 +1,4 @@
-package com.shahtott.alexon_task.onboarding
+package com.shahtott.alexon_task.ui.onboarding
 
 import android.os.Bundle
 import android.widget.ImageView
@@ -12,10 +12,10 @@ import androidx.lifecycle.lifecycleScope
 import androidx.viewpager2.widget.ViewPager2
 import com.shahtott.alexon_task.R
 import com.shahtott.alexon_task.databinding.ActivityOnboardingBinding
-import com.shahtott.alexon_task.onboarding.screens.OnBoardingFirstScreen
-import com.shahtott.alexon_task.onboarding.screens.OnBoardingSecondScreen
-import com.shahtott.alexon_task.onboarding.screens.OnBoardingThirdScreen
-import com.shahtott.alexon_task.onboarding.viewpager.OnboardingPagerAdapter
+import com.shahtott.alexon_task.ui.onboarding.screens.OnBoardingFirstScreen
+import com.shahtott.alexon_task.ui.onboarding.screens.OnBoardingSecondScreen
+import com.shahtott.alexon_task.ui.onboarding.screens.OnBoardingThirdScreen
+import com.shahtott.alexon_task.ui.onboarding.viewpager.OnboardingPagerAdapter
 import com.shahtott.alexon_task.util.toAuthActivity
 import com.shahtott.alexon_task.util.toMainActivity
 import dagger.hilt.android.AndroidEntryPoint

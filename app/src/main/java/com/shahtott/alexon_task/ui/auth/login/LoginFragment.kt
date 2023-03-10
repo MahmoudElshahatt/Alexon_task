@@ -1,4 +1,4 @@
-package com.shahtott.alexon_task.auth.login
+package com.shahtott.alexon_task.ui.auth.login
 
 import android.os.Bundle
 import android.util.Log

@@ -1,4 +1,4 @@
-package com.shahtott.alexon_task.onboarding.screens
+package com.shahtott.alexon_task.ui.onboarding.screens
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.shahtott.alexon_task.databinding.FragmentThirdScreenBinding
-import com.shahtott.alexon_task.onboarding.OnBoardingActivity
+import com.shahtott.alexon_task.ui.onboarding.OnBoardingActivity
 import com.shahtott.alexon_task.util.toAuthActivity
 import kotlinx.coroutines.launch
 
