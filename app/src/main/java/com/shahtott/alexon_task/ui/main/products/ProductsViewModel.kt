@@ -10,6 +10,9 @@ import javax.inject.Inject
 class ProductsViewModel @Inject constructor(private val productsRepository: ProductsRepository) :
     ViewModel() {
 
+    /**
+     * UI states
+     */
 
 
     fun getProducts() {
