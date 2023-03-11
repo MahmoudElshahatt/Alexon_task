@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="accent_color">#FE724C</color>
-    <color name="splash_background_color">#FE724C</color>
-    <color name="main_color">#FFFFFF</color>
+
     <color name="gray_500">#9796A1</color>
     <color name="gray_300">#C4C4C4</color>
     <color name="gray_700">#5B5B5E</color>
+    <color name="red">#C2341C</color>
+    <color name="main_color">#FFFFFF</color>
+    <color name="accent_color">#FE724C</color>
+    <color name="splash_background_color">#FE724C</color>
     <color name="hint_text_color">@color/gray_300</color>
     <color name="selected_indicator_color">#FFC529</color>
     <color name="onboarding_title_color">#131A38</color>
@@ -20,4 +22,5 @@
     <color name="text_input_color">#EBF9F9F9</color>
     <color name="title_color">#111719</color>
     <color name="search_icon_tint">#767F9D</color>
+
 </resources>
