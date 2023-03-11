@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -35,6 +36,28 @@ class ProductsFragment : Fragment(), ProductsAdapter.ProductClickListener {
 
         onClickListeners()
         observations()
+        onDrawerSlide()
+    }
+
+    private fun onDrawerSlide() {
+        binding.drawerLayout.addDrawerListener(object : DrawerLayout.DrawerListener {
+            override fun onDrawerSlide(drawerView: View, slideOffset: Float) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onDrawerOpened(drawerView: View) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onDrawerClosed(drawerView: View) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onDrawerStateChanged(newState: Int) {
+                TODO("Not yet implemented")
+            }
+
+        })
     }
 
     private fun onClickListeners() {

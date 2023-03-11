@@ -16,6 +16,7 @@ class ProductDetailsFragment : Fragment() {
 
     private lateinit var binding: FragmentProductDetailsBinding
     private lateinit var currentProduct: Product
+    private var productAmount: Int = 0
     private val args: ProductDetailsFragmentArgs by navArgs()
 
     override fun onCreateView(
@@ -68,6 +69,13 @@ class ProductDetailsFragment : Fragment() {
     private fun onClickListeners() {
         binding.btnBack.setOnClickListener {
             findNavController().popBackStack()
+        }
+        binding.btnPlus.setOnClickListener {
+            binding.txtAmount.text = (++productAmount).toString()
+        }
+        binding.btnMinus.setOnClickListener {
+            if (productAmount == 0) return@setOnClickListener
+            binding.txtAmount.text = (--productAmount).toString()
         }
     }
 }

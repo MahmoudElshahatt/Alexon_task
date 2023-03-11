@@ -2,6 +2,7 @@ package com.alexon.alexon_task.di
 
 import android.content.Context
 import androidx.viewbinding.BuildConfig
+import com.alexon.alexon_task.App
 import com.alexon.alexon_task.data.local.DataStoreImpl
 import com.alexon.alexon_task.data.remote.RemoteData
 import com.alexon.alexon_task.util.BASE_URL
@@ -24,16 +25,27 @@ class DataModule {
 
     @Provides
     @Singleton
-    fun getOkHttpClient(): OkHttpClient {
+    fun provideApp(): App {
+        return App.instance
+    }
+
+    @Provides
+    @Singleton
+    fun getOkHttpClient(
+        myApp: App,
+        tokenAuthenticator: TokenAuthenticator,
+        myServiceInterceptor: MyServiceInterceptor
+    ): OkHttpClient {
         val logging = HttpLoggingInterceptor()
-        logging.level =
-            if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY else HttpLoggingInterceptor.Level.NONE
+        logging.level = if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY else HttpLoggingInterceptor.Level.NONE
         val okHttpClient = OkHttpClient.Builder()
         okHttpClient.apply {
             retryOnConnectionFailure(true)
             readTimeout(1, TimeUnit.MINUTES)
             connectTimeout(1, TimeUnit.MINUTES)
             writeTimeout(5, TimeUnit.MINUTES)
+            authenticator(tokenAuthenticator)
+            addInterceptor(myServiceInterceptor)
             addInterceptor(logging)
         }.build()
 
@@ -61,8 +73,12 @@ class DataModule {
     @Singleton
     fun provideApi(
         retrofit: Retrofit,
+        myServiceInterceptor: MyServiceInterceptor,
+        tokenAuthenticator: TokenAuthenticator
     ): RemoteData {
         val api = retrofit.create(RemoteData::class.java)
+        myServiceInterceptor.remoteDataManager = api
+        tokenAuthenticator.remoteData = api
         return api
     }
 

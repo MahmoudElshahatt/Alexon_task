@@ -1,203 +1,215 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.main.products.ProductsFragment">
+    android:layout_height="match_parent">
 
-    <ImageButton
-        android:id="@+id/btn_back"
-        android:layout_width="38dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/white_background_with_ripple"
-        android:clickable="true"
-        android:elevation="2dp"
-        android:padding="12dp"
-        android:src="@drawable/ic_back_arrow"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.main.products.ProductsFragment">
 
-    <TextView
-        android:id="@+id/txt_search_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/font_family"
-        android:text="@string/search_products"
-        android:textColor="@color/title_color"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_back"
-        app:layout_constraintEnd_toStartOf="@+id/card_person"
-        app:layout_constraintStart_toEndOf="@+id/btn_back"
-        app:layout_constraintTop_toTopOf="@+id/btn_back" />
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/white_background_with_ripple"
+            android:clickable="true"
+            android:elevation="2dp"
+            android:padding="12dp"
+            android:src="@drawable/ic_back_arrow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_person"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="26dp"
-        app:cardCornerRadius="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/txt_search_title"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txt_search_title">
-
-        <ImageView
+        <TextView
+            android:id="@+id/txt_search_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:clipToOutline="true"
-            android:src="@drawable/ic_person" />
-    </androidx.cardview.widget.CardView>
-
-    <ImageView
-        android:id="@+id/img_filter_search"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/white_background_with_ripple"
-        android:clickable="true"
-        android:elevation="2dp"
-        android:focusable="true"
-        android:padding="12dp"
-        android:src="@drawable/ic_filter_search"
-        app:layout_constraintBottom_toBottomOf="@id/search_text_input"
-        app:layout_constraintEnd_toEndOf="@+id/card_person"
-        app:layout_constraintStart_toStartOf="@+id/card_person"
-        app:layout_constraintTop_toTopOf="@+id/search_text_input" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_selector"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="26dp"
-        android:elevation="3dp"
-        app:cardCornerRadius="25dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/search_text_input">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:padding="1dp">
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/app_button_background"
-                android:fontFamily="@font/font_family"
-                android:gravity="center"
-                android:padding="17dp"
-                android:text="@string/product_item"
-                android:textColor="@color/white"
-                android:textSize="12sp"
-                android:textStyle="bold" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/unselected_button_shape"
-                android:fontFamily="@font/font_family"
-                android:gravity="center"
-                android:padding="17dp"
-                android:text="@string/categories"
-                android:textColor="@color/accent_color"
-                android:textSize="12sp" />
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_products"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:clipToPadding="true"
-        android:paddingStart="25dp"
-        android:paddingTop="20dp"
-        android:paddingEnd="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/card_selector"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ProgressBar
-        android:id="@+id/pg_products"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:indeterminateTint="@color/accent_color"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@+id/rv_products"
-        app:layout_constraintEnd_toEndOf="@+id/rv_products"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_search_title" />
-
-    <ImageView
-        android:id="@+id/img_error_state"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/rv_products"
-        app:layout_constraintStart_toStartOf="@+id/rv_products"
-        app:layout_constraintTop_toBottomOf="@+id/txt_search_title"
-        tools:src="@drawable/img_no_internet_connection" />
-
-    <TextView
-        android:id="@+id/txt_error_state"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:fontFamily="@font/font_family"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/img_error_state"
-        app:layout_constraintStart_toStartOf="@+id/img_error_state"
-        app:layout_constraintTop_toBottomOf="@+id/img_error_state"
-        tools:text="@string/no_internet_connection" />
-
-    <androidx.constraintlayout.widget.Group
-        android:id="@+id/error_state_group"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:constraint_referenced_ids="txt_error_state,img_error_state" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/search_text_input"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="10dp"
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp"
-        android:textColorHint="@color/black"
-        app:boxStrokeColor="@color/accent_color"
-        app:expandedHintEnabled="false"
-        app:hintEnabled="false"
-        app:hintTextColor="@color/hint_text_color"
-        app:layout_constraintEnd_toStartOf="@id/img_filter_search"
-        app:layout_constraintStart_toStartOf="@id/btn_back"
-        app:layout_constraintTop_toBottomOf="@id/txt_search_title"
-        app:startIconDrawable="@drawable/ic_search"
-        app:startIconTint="@color/search_icon_tint">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/ed_search"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:fontFamily="@font/font_family"
-            android:hint="Search Product"
-            android:inputType="textEmailAddress"
-            android:textColorHint="@color/hint_text_color"
-            android:textSize="15sp" />
+            android:text="@string/search_products"
+            android:textColor="@color/title_color"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_back"
+            app:layout_constraintEnd_toStartOf="@+id/card_person"
+            app:layout_constraintStart_toEndOf="@+id/btn_back"
+            app:layout_constraintTop_toTopOf="@+id/btn_back" />
 
-    </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/search_text_input"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="10dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="@color/accent_color"
+            app:expandedHintEnabled="false"
+            app:hintEnabled="false"
+            app:hintTextColor="@color/hint_text_color"
+            app:layout_constraintEnd_toStartOf="@id/img_filter_search"
+            app:layout_constraintStart_toStartOf="@id/btn_back"
+            app:layout_constraintTop_toBottomOf="@id/txt_search_title"
+            app:startIconDrawable="@drawable/ic_search"
+            app:startIconTint="@color/search_icon_tint">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ed_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/font_family"
+                android:hint="Search Product"
+                android:inputType="textEmailAddress"
+                android:textColorHint="@color/hint_text_color"
+                android:textSize="15sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_person"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="26dp"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_search_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txt_search_title">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clipToOutline="true"
+                android:src="@drawable/ic_person" />
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/img_filter_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/white_background_with_ripple"
+            android:clickable="true"
+            android:elevation="2dp"
+            android:focusable="true"
+            android:padding="12dp"
+            android:src="@drawable/ic_filter_search"
+            app:layout_constraintBottom_toBottomOf="@id/search_text_input"
+            app:layout_constraintEnd_toEndOf="@+id/card_person"
+            app:layout_constraintStart_toStartOf="@+id/card_person"
+            app:layout_constraintTop_toTopOf="@+id/search_text_input" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_selector"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="26dp"
+            android:elevation="3dp"
+            app:cardCornerRadius="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/search_text_input">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="1dp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/app_button_background"
+                    android:fontFamily="@font/font_family"
+                    android:gravity="center"
+                    android:padding="17dp"
+                    android:text="@string/product_item"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/unselected_button_shape"
+                    android:fontFamily="@font/font_family"
+                    android:gravity="center"
+                    android:padding="17dp"
+                    android:text="@string/categories"
+                    android:textColor="@color/accent_color"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_products"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:clipToPadding="true"
+            android:paddingStart="25dp"
+            android:paddingTop="20dp"
+            android:paddingEnd="25dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card_selector"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ProgressBar
+            android:id="@+id/pg_products"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/accent_color"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/rv_products"
+            app:layout_constraintEnd_toEndOf="@+id/rv_products"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_search_title" />
+
+        <ImageView
+            android:id="@+id/img_error_state"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/rv_products"
+            app:layout_constraintStart_toStartOf="@+id/rv_products"
+            app:layout_constraintTop_toBottomOf="@+id/txt_search_title"
+            tools:src="@drawable/img_no_internet_connection" />
+
+        <TextView
+            android:id="@+id/txt_error_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:fontFamily="@font/font_family"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/img_error_state"
+            app:layout_constraintStart_toStartOf="@+id/img_error_state"
+            app:layout_constraintTop_toBottomOf="@+id/img_error_state"
+            tools:text="@string/no_internet_connection" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/error_state_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="txt_error_state,img_error_state" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/nav_header_menu"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"/>
+</androidx.drawerlayout.widget.DrawerLayout>
