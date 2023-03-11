@@ -15,7 +15,10 @@ import com.shahtott.alexon_task.ui.main.products.models.ProductsResponse.Product
 private const val VIEW_TYPE_HEADER = 0
 private const val VIEW_TYPE_ITEM = 1
 
-class ProductsAdapter() : ListAdapter<Product, RecyclerView.ViewHolder>(ProductDiffCallback()) {
+class ProductsAdapter(
+    private val productClickListener: ProductClickListener
+) : ListAdapter<Product, RecyclerView.ViewHolder>(ProductDiffCallback()) {
+
 
     override fun getItemViewType(position: Int): Int {
         return if (position == 0) {
@@ -50,10 +53,10 @@ class ProductsAdapter() : ListAdapter<Product, RecyclerView.ViewHolder>(ProductD
                 headerHolder.bind()
             }
             VIEW_TYPE_ITEM -> {
-                val itemHolder = holder as ItemViewHolder
-                val item = getItem(position - 1)
-                itemHolder.bind(item)
-                // bind data to item view holder
+                val productHolder = holder as ItemViewHolder
+                val product = getItem(position - 1)
+
+                productHolder.bind(product,productClickListener)
             }
             else -> throw IllegalArgumentException("Invalid view type")
         }
@@ -67,28 +70,33 @@ class ProductsAdapter() : ListAdapter<Product, RecyclerView.ViewHolder>(ProductD
 
     inner class HeaderViewHolder(private val itemBinding: ProductHeaderBinding) :
         RecyclerView.ViewHolder(itemBinding.root) {
+
         fun bind() {
             itemBinding.txtHeader.text = "Found \n${currentList.size} results"
         }
 
     }
 
-    inner class ItemViewHolder(private val itemBinding: ProductItemBinding) :
+     class ItemViewHolder(private val itemBinding: ProductItemBinding) :
         RecyclerView.ViewHolder(itemBinding.root) {
-        fun bind(product: Product) {
+
+        fun bind(product: Product, productClickListener: ProductClickListener) {
             itemBinding.txtItemTitle.text = product.title
             itemBinding.txtRate.text = product.rating.toString()
             itemBinding.txtItemPrice.text = product.price.toString()
             itemBinding.txtItemDesc.text = product.description
-
             val imageUrl = product.thumbnail
             Glide
                 .with(itemBinding.root)
                 .load(imageUrl)
                 .placeholder(R.drawable.bx_image)
                 .into(itemBinding.imgItem)
+            itemBinding.itemProductContainer.setOnClickListener {
+                productClickListener.onProductClick(product.id!!)
+            }
 
         }
+
     }
 
     class ProductDiffCallback : DiffUtil.ItemCallback<Product>() {
@@ -107,5 +115,7 @@ class ProductsAdapter() : ListAdapter<Product, RecyclerView.ViewHolder>(ProductD
         }
     }
 
-
+    interface ProductClickListener {
+        fun onProductClick(productId: Int)
+    }
 }

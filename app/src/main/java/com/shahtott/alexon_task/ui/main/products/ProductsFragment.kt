@@ -1,25 +1,22 @@
 package com.shahtott.alexon_task.ui.main.products
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.shahtott.alexon_task.R
-import com.shahtott.alexon_task.databinding.FragmentLoginBinding
 import com.shahtott.alexon_task.databinding.FragmentProductsBinding
 import com.shahtott.alexon_task.ui.main.products.adapter.ProductsAdapter
-import com.shahtott.alexon_task.util.snakebar.showSnakeBar
-import com.shahtott.alexon_task.util.toMainActivity
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class ProductsFragment : Fragment() {
+class ProductsFragment : Fragment(), ProductsAdapter.ProductClickListener {
 
     private lateinit var binding: FragmentProductsBinding
     private val viewModel: ProductsViewModel by viewModels()
@@ -27,7 +24,7 @@ class ProductsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding = FragmentProductsBinding.inflate(layoutInflater)
         return binding.root
@@ -39,6 +36,15 @@ class ProductsFragment : Fragment() {
         onClickListeners()
         observations()
     }
+
+    private fun onClickListeners() {
+
+        binding.btnBack.setOnClickListener {
+            requireActivity().finish()
+        }
+
+    }
+
 
     private fun observations() {
         viewModel.isLoading.observe(viewLifecycleOwner) { isLoading ->
@@ -64,24 +70,24 @@ class ProductsFragment : Fragment() {
 
     }
 
-    private fun onClickListeners() {
-
-        binding.btnBack.setOnClickListener {
-            requireActivity().finish()
-        }
-
-    }
 
     private fun setUpListAdapter(): ProductsAdapter {
-        val adapter = ProductsAdapter()
+        val adapter = ProductsAdapter(this)
         binding.rvProducts.apply {
             this.adapter = adapter
+
             layoutManager = StaggeredGridLayoutManager(
                 2,
                 StaggeredGridLayoutManager.VERTICAL
             )
         }
         return adapter
+    }
+
+    override fun onProductClick(productId: Int) {
+        findNavController().navigate(
+            ProductsFragmentDirections.actionProductsFragmentToProductDetailsFragment(productId)
+        )
     }
 
     private fun showError(errorMessage: String?, errorImg: Int) {
@@ -99,6 +105,7 @@ class ProductsFragment : Fragment() {
             cancelCurrentJob()
         }
     }
+
 
 
 }
