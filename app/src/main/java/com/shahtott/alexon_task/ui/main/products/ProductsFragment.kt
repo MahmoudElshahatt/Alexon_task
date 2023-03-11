@@ -52,15 +52,13 @@ class ProductsFragment : Fragment() {
 
         viewModel.generalError.observe(viewLifecycleOwner) { errorMessage ->
             if (errorMessage.isNotEmpty()) {
-                this.view?.let {
-                    showSnakeBar(it, errorMessage)
-                }
+                showError(errorMessage, R.drawable.img_general_error)
             }
         }
 
         viewModel.networkError.observe(viewLifecycleOwner) { isNoInternet ->
             if (isNoInternet) {
-                binding.errorStateGroup.isVisible = isNoInternet
+                showError(getString(R.string.no_internet), R.drawable.img_no_internet_connection)
             }
         }
 
@@ -86,6 +84,13 @@ class ProductsFragment : Fragment() {
         return adapter
     }
 
+    private fun showError(errorMessage: String?, errorImg: Int) {
+        binding.apply {
+            txtErrorState.text = errorMessage
+            imgErrorState.setImageResource(errorImg)
+            errorStateGroup.isVisible = true
+        }
+    }
 
     override fun onDestroy() {
         super.onDestroy()
@@ -95,13 +100,5 @@ class ProductsFragment : Fragment() {
         }
     }
 
-//    private fun showError(errorMessage: String?, errorImg: Int) {
-//        binding.apply {
-//            pgLoading.isVisible = false
-//            viewsGroup.isVisible = false
-//            txtErrorState.text = errorMessage
-//            imgErrorState.setImageResource(errorImg)
-//            errorStateGroup.isVisible = true
-//        }
-//    }
+
 }

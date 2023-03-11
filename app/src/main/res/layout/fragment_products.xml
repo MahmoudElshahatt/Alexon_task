@@ -143,11 +143,11 @@
         android:id="@+id/img_error_state"
         android:layout_width="250dp"
         android:layout_height="250dp"
-        android:src="@drawable/img_no_internet_connection"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/rv_products"
         app:layout_constraintStart_toStartOf="@+id/rv_products"
-        app:layout_constraintTop_toBottomOf="@+id/txt_search_title" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_search_title"
+        tools:src="@drawable/img_no_internet_connection" />
 
     <TextView
         android:id="@+id/txt_error_state"
@@ -155,11 +155,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="14dp"
         android:fontFamily="@font/font_family"
-        android:text="@string/no_internet_connection"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/img_error_state"
         app:layout_constraintStart_toStartOf="@+id/img_error_state"
-        app:layout_constraintTop_toBottomOf="@+id/img_error_state" />
+        app:layout_constraintTop_toBottomOf="@+id/img_error_state"
+        tools:text="@string/no_internet_connection" />
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/error_state_group"

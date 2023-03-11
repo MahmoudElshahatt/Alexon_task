@@ -15,7 +15,7 @@ import com.shahtott.alexon_task.databinding.ActivityOnboardingBinding
 import com.shahtott.alexon_task.ui.onboarding.screens.OnBoardingFirstScreen
 import com.shahtott.alexon_task.ui.onboarding.screens.OnBoardingSecondScreen
 import com.shahtott.alexon_task.ui.onboarding.screens.OnBoardingThirdScreen
-import com.shahtott.alexon_task.ui.onboarding.viewpager.OnboardingPagerAdapter
+import com.shahtott.alexon_task.ui.onboarding.pageradapter.OnboardingPagerAdapter
 import com.shahtott.alexon_task.util.toAuthActivity
 import com.shahtott.alexon_task.util.toMainActivity
 import dagger.hilt.android.AndroidEntryPoint
