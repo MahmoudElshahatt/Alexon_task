@@ -20,7 +20,7 @@
         android:label="fragment_product_details"
         tools:layout="@layout/fragment_product_details" >
         <argument
-            android:name="productId"
-            app:argType="integer" />
+            android:name="product"
+            app:argType="com.alexon.alexon_task.ui.main.products.models.ProductsResponse$Product" />
     </fragment>
 </navigation>

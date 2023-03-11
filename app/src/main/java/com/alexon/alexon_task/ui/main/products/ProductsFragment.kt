@@ -11,7 +11,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.alexon.alexon_task.R
 import com.alexon.alexon_task.databinding.FragmentProductsBinding
-import com.alexon.alexon_task.ui.main.products.adapter.ProductsAdapter
+import com.alexon.alexon_task.ui.main.adapter.ProductsAdapter
+import com.alexon.alexon_task.ui.main.products.models.ProductsResponse
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -51,7 +52,7 @@ class ProductsFragment : Fragment(), ProductsAdapter.ProductClickListener {
         }
 
         viewModel.products.observe(viewLifecycleOwner) { products ->
-            val adapter = setUpListAdapter()
+            val adapter = getListAdapter()
             adapter.submitList(products)
         }
 
@@ -70,7 +71,7 @@ class ProductsFragment : Fragment(), ProductsAdapter.ProductClickListener {
     }
 
 
-    private fun setUpListAdapter(): ProductsAdapter {
+    private fun getListAdapter(): ProductsAdapter {
         val adapter = ProductsAdapter(this)
         binding.rvProducts.apply {
             this.adapter = adapter
@@ -83,9 +84,9 @@ class ProductsFragment : Fragment(), ProductsAdapter.ProductClickListener {
         return adapter
     }
 
-    override fun onProductClick(productId: Int) {
+    override fun onProductClick(product: ProductsResponse.Product) {
         findNavController().navigate(
-            ProductsFragmentDirections.actionProductsFragmentToProductDetailsFragment(productId)
+            ProductsFragmentDirections.actionProductsFragmentToProductDetailsFragment(product)
         )
     }
 
@@ -104,7 +105,6 @@ class ProductsFragment : Fragment(), ProductsAdapter.ProductClickListener {
             cancelCurrentJob()
         }
     }
-
 
 
 }

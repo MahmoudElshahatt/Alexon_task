@@ -1,8 +1,10 @@
 package com.alexon.alexon_task.ui.main.products.models
 
 
+import android.os.Parcelable
 import com.squareup.moshi.Json
 import androidx.annotation.Keep
+import kotlinx.android.parcel.Parcelize
 
 @Keep
 data class ProductsResponse(
@@ -15,6 +17,7 @@ data class ProductsResponse(
     @field:Json(name = "total")
     val total: Int? = 0 // 100
 ) {
+    @Parcelize
     @Keep
     data class Product(
         @field:Json(name = "brand")
@@ -39,5 +42,5 @@ data class ProductsResponse(
         val thumbnail: String? = "", // https://i.dummyjson.com/data/products/1/thumbnail.jpg
         @field:Json(name = "title")
         val title: String? = "" // iPhone 9
-    )
+    ) : Parcelable
 }

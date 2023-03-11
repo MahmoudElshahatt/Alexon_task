@@ -1,4 +1,4 @@
-package com.alexon.alexon_task.ui.main.products.adapter
+package com.alexon.alexon_task.ui.main.adapter
 
 
 import android.view.LayoutInflater
@@ -92,7 +92,7 @@ class ProductsAdapter(
                 .placeholder(R.drawable.bx_image)
                 .into(itemBinding.imgItem)
             itemBinding.itemProductContainer.setOnClickListener {
-                productClickListener.onProductClick(product.id!!)
+                productClickListener.onProductClick(product)
             }
 
         }
@@ -116,6 +116,6 @@ class ProductsAdapter(
     }
 
     interface ProductClickListener {
-        fun onProductClick(productId: Int)
+        fun onProductClick(product: Product)
     }
 }
