@@ -78,7 +78,7 @@
                 android:layout_marginTop="30dp"
                 android:fontFamily="@font/font_family"
                 android:text="@string/e_mail"
-                android:textColor="@color/header_text_color"
+                android:textColor="@color/light_gray_text_color"
                 android:textSize="17sp" />
 
             <com.google.android.material.textfield.TextInputLayout
@@ -112,7 +112,7 @@
                 android:layout_marginTop="25dp"
                 android:fontFamily="@font/font_family"
                 android:text="@string/password"
-                android:textColor="@color/header_text_color"
+                android:textColor="@color/light_gray_text_color"
                 android:textSize="17sp" />
 
             <com.google.android.material.textfield.TextInputLayout

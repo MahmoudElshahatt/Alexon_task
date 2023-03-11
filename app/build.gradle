@@ -7,11 +7,11 @@ plugins {
     id 'com.google.dagger.hilt.android'
 }
 android {
-    namespace 'com.shahtott.alexon_task'
+    namespace 'com.alexon.alexon_task'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.shahtott.alexon_task"
+        applicationId "com.alexon.alexon_task"
         minSdk 21
         targetSdk 32
         versionCode 1
