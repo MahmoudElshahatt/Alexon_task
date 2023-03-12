@@ -319,7 +319,7 @@
             style="@style/AppButton"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="35dp"
             android:layout_marginBottom="24dp"
             android:drawableStart="@drawable/bag_background"
             android:drawablePadding="12dp"
@@ -344,5 +344,16 @@
             app:layout_constraintTop_toTopOf="@+id/txt_product_price"
             app:layout_constraintVertical_bias="0.82"
             tools:text="-5.25%" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/cart_anim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_loop="false"
+            app:lottie_rawRes="@raw/shopping_cart" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
