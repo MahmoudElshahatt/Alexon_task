@@ -13,12 +13,14 @@ const val REFRESH_HEADER = "No-Refresh"
 const val AUTH_NOT_REQUIRED = "$NO_AUTH_HEADER: true"
 const val REFRESH_TOKEN = "$REFRESH_HEADER: true"
 const val AUTH_HEADER = "Content-type:application/json"
+
 interface RemoteData {
 
     @POST("/auth/login")
     @Headers(AUTH_HEADER)
     suspend fun login(@Body loginBody: LoginBody): LoginResponse
 
+    //No refresh token for now.
     @GET
     suspend fun refreshToken(token: String): String
 

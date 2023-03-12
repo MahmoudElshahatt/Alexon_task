@@ -50,25 +50,22 @@ class TokenAuthenticator @Inject constructor() : Authenticator {
                         currentRefreshToken
                     )
                 }
-
-                try {
+                return try {
                     val updatedToken = newAccessTokenCall ?: ""
                     runBlocking {
                         dataStoreManager.insertToken(updatedToken)
                         myServiceInterceptor.setSessionToken(updatedToken)
                     }
-                    return response.request.newBuilder()
+                    response.request.newBuilder()
                         .header("Authorization", "$bearer $updatedToken")
                         .build()
                 } catch (E: Exception) {
-                    return null
+                    null
                 }
 
             }catch (E: Exception) {
                 return null
             }
-
-
 
         } else return null
     }

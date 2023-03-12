@@ -56,7 +56,7 @@ class ProductsAdapter(
                 val productHolder = holder as ItemViewHolder
                 val product = getItem(position - 1)
 
-                productHolder.bind(product,productClickListener)
+                productHolder.bind(product, productClickListener)
             }
             else -> throw IllegalArgumentException("Invalid view type")
         }
@@ -77,7 +77,7 @@ class ProductsAdapter(
 
     }
 
-     class ItemViewHolder(private val itemBinding: ProductItemBinding) :
+    class ItemViewHolder(private val itemBinding: ProductItemBinding) :
         RecyclerView.ViewHolder(itemBinding.root) {
 
         fun bind(product: Product, productClickListener: ProductClickListener) {
@@ -90,7 +90,8 @@ class ProductsAdapter(
                 .with(itemBinding.root)
                 .load(imageUrl)
                 .placeholder(R.drawable.bx_image)
-                .into(itemBinding.imgItem)
+                .into(itemBinding.itemImageContainer)
+
             itemBinding.itemProductContainer.setOnClickListener {
                 productClickListener.onProductClick(product)
             }

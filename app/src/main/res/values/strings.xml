@@ -26,4 +26,12 @@
     <string name="see_preview"><u>See Preview</u></string>
     <string name="choice_of_other_products">Choice of Other Products</string>
     <string name="add_to_cart">Add to Cart</string>
+    <string name="user_name">Eljad Eendaz</string>
+    <string name="my_orders">My Orders</string>
+    <string name="my_profile">My Profile</string>
+    <string name="delivery_address">Delivery Address</string>
+    <string name="settings">Settings</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="helps_and_faqs"><![CDATA[Helps & FAQS]]></string>
+    <string name="log_out">Log Out</string>
 </resources>

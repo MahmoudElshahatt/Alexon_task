@@ -23,16 +23,10 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 class DataModule {
 
-    @Provides
-    @Singleton
-    fun provideApp(): App {
-        return App.instance
-    }
 
     @Provides
     @Singleton
     fun getOkHttpClient(
-        myApp: App,
         tokenAuthenticator: TokenAuthenticator,
         myServiceInterceptor: MyServiceInterceptor
     ): OkHttpClient {

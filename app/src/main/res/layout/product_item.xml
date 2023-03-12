@@ -9,41 +9,36 @@
     app:cardCornerRadius="18dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/item_product_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/item_product_container"
         android:background="@drawable/white_background_with_ripple"
         android:clickable="true">
 
-        <androidx.cardview.widget.CardView
+
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/item_image_container"
             android:layout_width="0dp"
-            android:layout_height="120dp"
-            app:cardCornerRadius="18dp"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/rounded12"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/place_holder_image" />
 
-            <ImageView
-                android:id="@+id/img_item"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                tools:src="@drawable/place_holder_image" />
-
-            <ImageView
-                android:id="@+id/ic_favorite"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="12dp"
-                android:clickable="true"
-                app:layout_constraintEnd_toEndOf="@+id/item_image_container"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_favorite" />
-        </androidx.cardview.widget.CardView>
+        <ImageView
+            android:id="@+id/ic_favorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="12dp"
+            android:clickable="true"
+            app:layout_constraintEnd_toEndOf="@+id/item_image_container"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_favorite" />
 
         <TextView
             android:id="@+id/txt_item_title"

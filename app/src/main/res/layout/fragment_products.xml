@@ -13,8 +13,8 @@
 
         <ImageButton
             android:id="@+id/btn_back"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_marginStart="26dp"
             android:layout_marginTop="16dp"
             android:background="@drawable/white_background_with_ripple"
@@ -32,10 +32,11 @@
             android:fontFamily="@font/font_family"
             android:text="@string/search_products"
             android:textColor="@color/title_color"
+            android:textFontWeight="1000"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/btn_back"
-            app:layout_constraintEnd_toStartOf="@+id/card_person"
+            app:layout_constraintEnd_toStartOf="@+id/img_person"
             app:layout_constraintStart_toEndOf="@+id/btn_back"
             app:layout_constraintTop_toTopOf="@+id/btn_back" />
 
@@ -70,22 +71,17 @@
                 android:textSize="15sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_person"
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/img_person"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="26dp"
-            app:cardCornerRadius="10dp"
+            android:src="@drawable/ic_person"
             app:layout_constraintBottom_toBottomOf="@+id/txt_search_title"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/txt_search_title">
+            app:layout_constraintTop_toTopOf="@+id/txt_search_title"
+            app:shapeAppearanceOverlay="@style/rounded15" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:clipToOutline="true"
-                android:src="@drawable/ic_person" />
-        </androidx.cardview.widget.CardView>
 
         <ImageView
             android:id="@+id/img_filter_search"
@@ -98,8 +94,8 @@
             android:padding="12dp"
             android:src="@drawable/ic_filter_search"
             app:layout_constraintBottom_toBottomOf="@id/search_text_input"
-            app:layout_constraintEnd_toEndOf="@+id/card_person"
-            app:layout_constraintStart_toStartOf="@+id/card_person"
+            app:layout_constraintEnd_toEndOf="@+id/img_person"
+            app:layout_constraintStart_toStartOf="@+id/img_person"
             app:layout_constraintTop_toTopOf="@+id/search_text_input" />
 
         <androidx.cardview.widget.CardView
@@ -205,11 +201,29 @@
             app:constraint_referenced_ids="txt_error_state,img_error_state" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
     <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        app:headerLayout="@layout/nav_header"
-        app:menu="@menu/nav_header_menu"
         android:layout_gravity="start"
-        android:fitsSystemWindows="true"/>
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/nav_header_menu">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_log_out"
+            style="@style/AppButton"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="24dp"
+            android:drawableStart="@drawable/log_out_background"
+            android:drawablePadding="12dp"
+            android:fontFamily="@font/font_family"
+            android:gravity="center"
+            android:text="@string/log_out" />
+
+    </com.google.android.material.navigation.NavigationView>
 </androidx.drawerlayout.widget.DrawerLayout>

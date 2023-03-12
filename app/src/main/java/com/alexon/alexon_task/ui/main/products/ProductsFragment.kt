@@ -36,28 +36,6 @@ class ProductsFragment : Fragment(), ProductsAdapter.ProductClickListener {
 
         onClickListeners()
         observations()
-        onDrawerSlide()
-    }
-
-    private fun onDrawerSlide() {
-        binding.drawerLayout.addDrawerListener(object : DrawerLayout.DrawerListener {
-            override fun onDrawerSlide(drawerView: View, slideOffset: Float) {
-                TODO("Not yet implemented")
-            }
-
-            override fun onDrawerOpened(drawerView: View) {
-                TODO("Not yet implemented")
-            }
-
-            override fun onDrawerClosed(drawerView: View) {
-                TODO("Not yet implemented")
-            }
-
-            override fun onDrawerStateChanged(newState: Int) {
-                TODO("Not yet implemented")
-            }
-
-        })
     }
 
     private fun onClickListeners() {
