@@ -333,7 +333,7 @@
             android:id="@+id/txt_discount_percentage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="10dp"
             android:fontFamily="@font/font_family"
             android:textColor="@android:color/holo_red_dark"
             android:textSize="20sp"
