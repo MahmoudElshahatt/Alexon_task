@@ -40,20 +40,21 @@ class OnBoardingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         splashScreen = installSplashScreen()
         splashScreen.setKeepOnScreenCondition { true }
-        handleDirections()
+        observations()
     }
 
-    private fun handleDirections() {
-        lifecycleScope.launch {
-            if (viewModel.isOnBoardingFinished() && !viewModel.isUserLoggedIn()) {
-                toAuthActivity()
-            } else if (viewModel.isUserLoggedIn()) {
-                toMainActivity()
-            } else {
-                startOnBoarding()
-            }
+    private fun observations() {
+        viewModel.isUserLoggedIn.observe(this) {
+            toMainActivity()
         }
 
+        viewModel.userPassedOnBoarding.observe(this) {
+            toAuthActivity()
+        }
+
+        viewModel.startOnBoarding.observe(this) {
+            startOnBoarding()
+        }
     }
 
     private fun startOnBoarding() {
