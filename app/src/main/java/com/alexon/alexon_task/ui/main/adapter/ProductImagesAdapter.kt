@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.alexon.alexon_task.R
 import com.alexon.alexon_task.databinding.ProductImageItemBinding
 import com.bumptech.glide.Glide
-import kotlinx.coroutines.NonDisposableHandle.parent
 
 class ProductImagesAdapter :
     ListAdapter<String, ProductImagesAdapter.ImageViewHolder>(ImageDiffCallback()) {

@@ -6,11 +6,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.alexon.alexon_task.R
 import com.alexon.alexon_task.databinding.ProductHeaderBinding
 import com.alexon.alexon_task.databinding.ProductItemBinding
 import com.alexon.alexon_task.ui.main.products.models.ProductsResponse.Product
+import com.bumptech.glide.Glide
 
 private const val VIEW_TYPE_HEADER = 0
 private const val VIEW_TYPE_ITEM = 1

@@ -8,18 +8,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.splashscreen.SplashScreen
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import androidx.lifecycle.lifecycleScope
 import androidx.viewpager2.widget.ViewPager2
 import com.alexon.alexon_task.R
 import com.alexon.alexon_task.databinding.ActivityOnboardingBinding
+import com.alexon.alexon_task.ui.onboarding.pageradapter.OnboardingPagerAdapter
 import com.alexon.alexon_task.ui.onboarding.screens.OnBoardingFirstScreen
 import com.alexon.alexon_task.ui.onboarding.screens.OnBoardingSecondScreen
 import com.alexon.alexon_task.ui.onboarding.screens.OnBoardingThirdScreen
-import com.alexon.alexon_task.ui.onboarding.pageradapter.OnboardingPagerAdapter
 import com.alexon.alexon_task.util.toAuthActivity
 import com.alexon.alexon_task.util.toMainActivity
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class OnBoardingActivity : AppCompatActivity() {

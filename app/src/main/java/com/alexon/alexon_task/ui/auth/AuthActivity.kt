@@ -1,7 +1,7 @@
 package com.alexon.alexon_task.ui.auth
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.alexon.alexon_task.R
 import dagger.hilt.android.AndroidEntryPoint
 

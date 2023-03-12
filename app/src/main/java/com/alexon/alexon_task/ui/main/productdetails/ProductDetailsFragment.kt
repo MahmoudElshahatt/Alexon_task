@@ -1,15 +1,15 @@
 package com.alexon.alexon_task.ui.main.productdetails
 
+import android.animation.Animator
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.alexon.alexon_task.R
 import com.alexon.alexon_task.databinding.FragmentProductDetailsBinding
 import com.alexon.alexon_task.ui.main.adapter.ProductImagesAdapter
 import com.alexon.alexon_task.ui.main.products.models.ProductsResponse.Product
@@ -80,9 +80,30 @@ class ProductDetailsFragment : Fragment() {
             binding.txtAmount.text = (--productAmount).toString()
         }
         binding.btnAddToCart.setOnClickListener {
-            binding.cartAnim.playAnimation()
-            Toast.makeText(requireContext(), getString(R.string.added_to_cart), Toast.LENGTH_SHORT)
-                .show()
+            startAndStopLottieAnim()
         }
+
+    }
+
+    private fun startAndStopLottieAnim() {
+        binding.cartAnim.isVisible = true
+        binding.cartAnim.playAnimation()
+        binding.cartAnim.addAnimatorListener(object : Animator.AnimatorListener {
+            override fun onAnimationStart(p0: Animator) {}
+
+            override fun onAnimationEnd(p0: Animator) {
+                binding.cartAnim.visibility = View.GONE
+            }
+
+            override fun onAnimationCancel(p0: Animator) {}
+
+            override fun onAnimationRepeat(p0: Animator) {}
+        }
+        )
+    }
+
+    override fun onPause() {
+        super.onPause()
+        binding.cartAnim.cancelAnimation()
     }
 }
