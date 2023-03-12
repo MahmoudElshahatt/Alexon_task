@@ -8,13 +8,16 @@ import androidx.core.view.isVisible
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.alexon.alexon_task.R
 import com.alexon.alexon_task.databinding.FragmentProductsBinding
 import com.alexon.alexon_task.ui.main.adapter.ProductsAdapter
 import com.alexon.alexon_task.ui.main.products.models.ProductsResponse
+import com.alexon.alexon_task.util.toAuthActivity
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class ProductsFragment : Fragment(), ProductsAdapter.ProductClickListener {
@@ -42,6 +45,10 @@ class ProductsFragment : Fragment(), ProductsAdapter.ProductClickListener {
 
         binding.btnBack.setOnClickListener {
             requireActivity().finish()
+        }
+        binding.btnLogOut.setOnClickListener {
+                viewModel.clearUserData()
+                requireActivity().toAuthActivity()
         }
 
     }

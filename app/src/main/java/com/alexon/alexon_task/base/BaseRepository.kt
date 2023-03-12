@@ -17,6 +17,10 @@ open class BaseRepository() {
         return dataStore.getUserName()
     }
 
+    suspend fun clearUserData() {
+        dataStore.clearAll()
+    }
+
     suspend fun saveUserDataAndLogFlag(user: User) {
         // save user data to data store
         dataStore.setLogged(true)

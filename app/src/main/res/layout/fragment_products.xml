@@ -220,7 +220,7 @@
             android:layout_marginTop="50dp"
             android:layout_marginBottom="24dp"
             android:drawableStart="@drawable/log_out_background"
-            android:drawablePadding="12dp"
+            android:drawablePadding="8dp"
             android:fontFamily="@font/font_family"
             android:gravity="center"
             android:text="@string/log_out" />

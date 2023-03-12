@@ -1,9 +1,6 @@
 package com.alexon.alexon_task.ui.main.products
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.alexon.alexon_task.ui.main.products.models.ProductsResponse
 import com.alexon.alexon_task.ui.main.products.models.ProductsResponse.Product
 import com.alexon.alexon_task.util.network.ErrorResponse
@@ -14,7 +11,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class ProductsViewModel @Inject constructor(val productsRepository: ProductsRepository) :
+class ProductsViewModel @Inject constructor(private val productsRepository: ProductsRepository) :
     ViewModel() {
 
     /**
@@ -62,6 +59,12 @@ class ProductsViewModel @Inject constructor(val productsRepository: ProductsRepo
 
     private fun showSuccess(productsResponse: ProductsResponse) {
         _products.value = productsResponse.products
+    }
+
+    fun clearUserData() {
+        viewModelScope.launch {
+            productsRepository.clearUserData()
+        }
     }
 
     fun cancelCurrentJob() {

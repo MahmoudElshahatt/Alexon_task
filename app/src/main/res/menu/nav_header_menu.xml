@@ -15,7 +15,7 @@
     <item
         android:id="@+id/menu_payment_method"
         android:icon="@drawable/ic_wallet"
-        android:title="Payment Methods" />
+        android:title="@string/payment_methods" />
     <item
         android:id="@+id/menu_contact_us"
         android:icon="@drawable/ic_message"

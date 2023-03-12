@@ -320,7 +320,7 @@
             android:layout_marginTop="35dp"
             android:layout_marginBottom="24dp"
             android:drawableStart="@drawable/bag_background"
-            android:drawablePadding="12dp"
+            android:drawablePadding="10dp"
             android:fontFamily="@font/font_family"
             android:gravity="center"
             android:text="@string/add_to_cart"
