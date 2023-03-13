@@ -21,10 +21,11 @@ The app shows a list of products from a dummy Api with a login screen and onBoar
 * **Kotlin Coroutines : For background tasks like calling a Retrofit call**.
 * **Retrofit : Retrofit is the class through which your API interfaces are turned into callable objects.**
 * **OkHttp Client : OkHttp is an efficient HTTP & HTTP/2 client for Android and Java applications.**
+* **Glide : an Image Loader Library for Android developed by bumptech and is a library that is recommended by Google.**
 * **Hilt : provides a standard way to incorporate Dagger dependency injection into an Android application.**
 * **DataStore : a NoSQL document database built for automatic scaling, high performance, and ease of application development.**
 * **MVVM Architecture (View - ViewModel - Model) together with Events that decide what Fragment or Activity should do.**
-* **Glide : an Image Loader Library for Android developed by bumptech and is a library that is recommended by Google.**
 * **View Binding : a feature that allows you to more easily write code that interacts with views.**
-* **Navigation Component.**
+* **Navigation Component with safeArgs.**
+* **Lottie Animation.**
 * **Material Design Components.**
