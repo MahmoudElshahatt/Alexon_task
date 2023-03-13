@@ -3,7 +3,7 @@ The app shows a list of products from a dummy Api with a login screen and onBoar
 
 # App Preview
 
-<img src="https://user-images.githubusercontent.com/79477855/208084106-1f930b49-cef6-413b-a57b-1a122be07641.gif" width="350" height="680">
+<img src="https://user-images.githubusercontent.com/79477855/224625665-fc0d1d2a-ee59-4461-b432-f21ecb9eaa25.mp4" width="350" height="680">
 
 # Screenshots
 
