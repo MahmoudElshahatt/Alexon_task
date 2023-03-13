@@ -39,6 +39,7 @@
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/font_family"
         android:text="prelookstudio@gmail.com"
+        android:textColor="@color/hint_text_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/txt_user_name"
         app:layout_constraintHorizontal_bias="0.0"

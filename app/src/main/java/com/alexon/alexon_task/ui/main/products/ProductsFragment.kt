@@ -1,9 +1,11 @@
 package com.alexon.alexon_task.ui.main.products
 
 import android.os.Bundle
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.GravityCompat
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -40,13 +42,12 @@ class ProductsFragment : Fragment(), ProductsAdapter.ProductClickListener {
     }
 
     private fun onClickListeners() {
-
         binding.btnBack.setOnClickListener {
-            requireActivity().finish()
+            binding.drawerLayout.openDrawer(GravityCompat.START)
         }
         binding.btnLogOut.setOnClickListener {
-                viewModel.clearUserData()
-                requireActivity().toAuthActivity()
+            viewModel.clearUserData()
+            requireActivity().toAuthActivity()
         }
 
     }

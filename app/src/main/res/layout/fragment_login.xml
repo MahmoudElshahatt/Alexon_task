@@ -255,13 +255,13 @@
             android:textFontWeight="650"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/btn_login_with_facebook2"
+            app:layout_constraintEnd_toStartOf="@+id/btn_login_with_google"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="@+id/view4"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_login_with_facebook2"
+            android:id="@+id/btn_login_with_google"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@drawable/social_media_button_background"
