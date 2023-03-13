@@ -7,20 +7,24 @@ The app shows a list of products from a dummy Api with a login screen and onBoar
 
 # Screenshots
 
-<img src="https://user-images.githubusercontent.com/79477855/224621191-e60c2a17-7bb3-4284-8a92-9fd1708357fe.png" width="350" height="700"> <img src="https://user-images.githubusercontent.com/79477855/224621288-534be42d-6d69-4c49-9602-1c63e1168067.png" width="350" height="700">
 
-<img src="https://user-images.githubusercontent.com/79477855/208082181-c1aa85c6-95e1-4995-94b6-3aea2ce8fdf7.png" width="350" height="700"> <img src="https://user-images.githubusercontent.com/79477855/208082339-b52ee31c-2a63-43c6-b0ac-b5efb566058c.png" width="350" height="700">
+<img src="https://user-images.githubusercontent.com/79477855/224621503-ec8fdeff-3de1-4bbc-a1ca-3e3d172b96c0.png" width="350" height="700"> <img src="https://user-images.githubusercontent.com/79477855/224621191-e60c2a17-7bb3-4284-8a92-9fd1708357fe.png" width="350" height="700"> 
 
-<img src="https://user-images.githubusercontent.com/79477855/208082348-e2ea8146-f42c-4bda-a9f8-8cb273b56081.png" width="350" height="700"> <img src="https://user-images.githubusercontent.com/79477855/208082366-4ee2854c-3a93-4661-b9b9-c0d69ab256f0.png" width="350" height="700">
+<img src="https://user-images.githubusercontent.com/79477855/224621288-534be42d-6d69-4c49-9602-1c63e1168067.png" width="350" height="700"> <img src="https://user-images.githubusercontent.com/79477855/224621829-6cab1346-8f04-4fd2-ab87-84a8842a41ff.png" width="350" height="700">
 
-<img src="https://user-images.githubusercontent.com/79477855/208082386-35e04fd9-e342-4246-9c50-b3037e84a073.png" width="350" height="700">
+<img src="https://user-images.githubusercontent.com/79477855/224622137-e6353491-0898-4c5a-aba4-c8a0d578f324.png" width="350" height="700"> <img src="https://user-images.githubusercontent.com/79477855/224621839-da1dfefd-5d77-443e-9eed-4d6d6c158549.png" width="350" height="700">
 
 # Tech stack & Open-source libraries
 
 * **100% Kotlin based**.
-* **MVVM Architecture (View - ViewModel - Model) together with Events that decide what Fragment or Activity should do**.
-* **FireBase Firestore : a NoSQL document database that lets you easily store, sync, and query data for your mobile and web apps - at global scale.**.
-* **FireBase Storage : lets you upload and share user generated content, such as images and video, which allows you to build rich media content into your apps**.
-* **Glide : an Image Loader Library for Android developed by bumptech and is a library that is recommended by Google**.
-* **View Binding : a feature that allows you to more easily write code that interacts with views**.
-* **Material Design Components**.
+* **Splash API 12 : API enables a new app launch animation for all apps when running on a device with Android 12 or higher.**
+* **Kotlin Coroutines : For background tasks like calling a Retrofit call**.
+* **Retrofit : Retrofit is the class through which your API interfaces are turned into callable objects.**
+* **OkHttp Client : OkHttp is an efficient HTTP & HTTP/2 client for Android and Java applications.**
+* **Hilt : provides a standard way to incorporate Dagger dependency injection into an Android application.**
+* **DataStore : a NoSQL document database built for automatic scaling, high performance, and ease of application development.**
+* **MVVM Architecture (View - ViewModel - Model) together with Events that decide what Fragment or Activity should do.**
+* **Glide : an Image Loader Library for Android developed by bumptech and is a library that is recommended by Google.**
+* **View Binding : a feature that allows you to more easily write code that interacts with views.**
+* **Navigation Component.**
+* **Material Design Components.**
