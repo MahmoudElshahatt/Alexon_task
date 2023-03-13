@@ -7,7 +7,7 @@ The app shows a list of products from a dummy Api with a login screen and onBoar
 
 # Screenshots
 
-<img src="https://user-images.githubusercontent.com/79477855/224621191-e60c2a17-7bb3-4284-8a92-9fd1708357fe.png" width="350" height="700"> <img src="https://user-images.githubusercontent.com/79477855/208082150-c6085f56-c203-4c6e-90ed-9ea99b15bfa2.png" width="350" height="700">
+<img src="https://user-images.githubusercontent.com/79477855/224621191-e60c2a17-7bb3-4284-8a92-9fd1708357fe.png" width="350" height="700"> <img src="https://user-images.githubusercontent.com/79477855/224621288-534be42d-6d69-4c49-9602-1c63e1168067.png" width="350" height="700">
 
 <img src="https://user-images.githubusercontent.com/79477855/208082181-c1aa85c6-95e1-4995-94b6-3aea2ce8fdf7.png" width="350" height="700"> <img src="https://user-images.githubusercontent.com/79477855/208082339-b52ee31c-2a63-43c6-b0ac-b5efb566058c.png" width="350" height="700">
 
