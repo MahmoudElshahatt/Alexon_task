@@ -8,11 +8,11 @@ The app shows a list of products from a dummy Api with a login screen and onBoar
 # Screenshots
 
 
-<img src="https://user-images.githubusercontent.com/79477855/224621503-ec8fdeff-3de1-4bbc-a1ca-3e3d172b96c0.png" width="350" height="700"> <img src="https://user-images.githubusercontent.com/79477855/224621191-e60c2a17-7bb3-4284-8a92-9fd1708357fe.png" width="350" height="700"> 
+<img src="https://user-images.githubusercontent.com/79477855/224621503-ec8fdeff-3de1-4bbc-a1ca-3e3d172b96c0.png" width="350" height="750"> <img src="https://user-images.githubusercontent.com/79477855/224621191-e60c2a17-7bb3-4284-8a92-9fd1708357fe.png" width="350" height="750"> 
 
-<img src="https://user-images.githubusercontent.com/79477855/224621288-534be42d-6d69-4c49-9602-1c63e1168067.png" width="350" height="700"> <img src="https://user-images.githubusercontent.com/79477855/224621829-6cab1346-8f04-4fd2-ab87-84a8842a41ff.png" width="350" height="700">
+<img src="https://user-images.githubusercontent.com/79477855/224621288-534be42d-6d69-4c49-9602-1c63e1168067.png" width="350" height="750"> <img src="https://user-images.githubusercontent.com/79477855/224621829-6cab1346-8f04-4fd2-ab87-84a8842a41ff.png" width="350" height="750">
 
-<img src="https://user-images.githubusercontent.com/79477855/224622137-e6353491-0898-4c5a-aba4-c8a0d578f324.png" width="350" height="700"> <img src="https://user-images.githubusercontent.com/79477855/224621839-da1dfefd-5d77-443e-9eed-4d6d6c158549.png" width="350" height="700">
+<img src="https://user-images.githubusercontent.com/79477855/224622137-e6353491-0898-4c5a-aba4-c8a0d578f324.png" width="350" height="750"> <img src="https://user-images.githubusercontent.com/79477855/224621839-da1dfefd-5d77-443e-9eed-4d6d6c158549.png" width="350" height="750">
 
 # Tech stack & Open-source libraries
 
