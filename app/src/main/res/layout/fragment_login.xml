@@ -93,7 +93,9 @@
                 android:textColorHint="@color/hint_text_color"
                 app:boxBackgroundColor="@color/text_input_color"
                 app:boxStrokeColor="@color/accent_color"
-                app:hintTextColor="@color/black">
+                app:expandedHintEnabled="false"
+                app:hintEnabled="false"
+                app:hintTextColor="@color/hint_text_color">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/ed_email"
@@ -102,7 +104,7 @@
                     android:fontFamily="@font/font_family"
                     android:hint="@string/your_email_or_phone"
                     android:inputType="textEmailAddress"
-                    android:textColorHint="@color/black"
+                    android:textColorHint="@color/hint_text_color"
                     android:textSize="16sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -129,7 +131,9 @@
                 app:boxStrokeColor="@color/accent_color"
                 app:endIconMode="password_toggle"
                 app:endIconTint="@color/hint_text_color"
-                app:hintTextColor="@color/black">
+                app:expandedHintEnabled="false"
+                app:hintEnabled="false"
+                app:hintTextColor="@color/hint_text_color">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/ed_password"
@@ -137,9 +141,10 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/font_family"
                     android:hint="@string/password"
-                    android:inputType="textEmailAddress"
-                    android:textColorHint="@color/black"
-                    android:textSize="16sp" />
+                    android:inputType="textPassword"
+                    android:textColorHint="@color/hint_text_color"
+                    android:textSize="16sp"
+                    app:endIconMode="password_toggle" />
 
             </com.google.android.material.textfield.TextInputLayout>
 

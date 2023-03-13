@@ -1,16 +1,17 @@
 package com.alexon.alexon_task.ui.auth.login
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.alexon.alexon_task.R
 import com.alexon.alexon_task.databinding.FragmentLoginBinding
 import com.alexon.alexon_task.util.snakebar.showSnakeBar
+import com.alexon.alexon_task.util.system.hideKeypad
 import com.alexon.alexon_task.util.toMainActivity
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -35,8 +36,10 @@ class LoginFragment : Fragment() {
         observations()
     }
 
+
     private fun observations() {
         //Login States
+
         viewModel.isLoading.observe(viewLifecycleOwner) { isLoading ->
             binding.pgLogin.isVisible = isLoading
         }
@@ -73,11 +76,21 @@ class LoginFragment : Fragment() {
         binding.btnLogin.setOnClickListener {
             val email = binding.edEmail.text.toString().trim()
             val password = binding.edPassword.text.toString().trim()
-            Log.i("LoginFragment", "$email + $password")
+
+            requireActivity().hideKeypad()
+            if (email.isEmpty() || password.isEmpty()) {
+                Toast.makeText(
+                    requireContext(),
+                    getString(R.string.enter_your_email_and_password),
+                    Toast.LENGTH_SHORT
+                ).show()
+                return@setOnClickListener
+            }
             viewModel.loginClicked(email, password)
         }
 
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

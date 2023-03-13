@@ -36,4 +36,6 @@
     <string name="log_out">Log Out</string>
     <string name="added_to_cart">Added To Cart !</string>
     <string name="payment_methods">Payment Methods</string>
+    <string name="search_product">Search Product</string>
+    <string name="enter_your_email_and_password">Enter your email and password ,please</string>
 </resources>
